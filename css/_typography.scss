@@ -1,4 +1,4 @@
-// TYPOGRAPHY
+/*** typography ***/
 %heading {
     font-family: $font-secondary;
     font-weight: 400;
@@ -30,28 +30,48 @@
     font-size: 1.9rem;
 }
 
+
+/*** buttons ***/
 .btn {
-    background-color: $color-secondary;
-    color: #fff;
     border: none;
-    border-radius: 0;
+    border-radius: 2.5rem;
+    color: $color-white;
     font-family: $font-secondary;
     text-transform: uppercase;
     font-size: 1.5rem;
-    padding: 1.8rem 3rem;
+    padding: 1rem 2rem;
     cursor: pointer;
     transition: all .2s;
 
-    &:hover {
+    &__submit {
         background-color: $color-primary;
     }
+
+    &__cancel {
+        background-color: $color-secondary;
+    }
+
+    // &__edit {
+    //     background-color: $color-secondary;
+    // }
+
+    // &__update {
+    //     background-color: $color-secondary;
+    // }
+
+    &:hover {
+        filter: brightness(150%);
+        color: $color-white;
+    }
 }
+
 
 .text-center {
     text-align: center;
 }
 
-// MARGINS/SPACES
+
+/*** margins ***/
 .mt-sm {
     margin-top: 2rem;
 }
@@ -63,4 +83,17 @@
 }
 .mt-xl {
     margin-top: 8rem;
+}
+
+.mb-sm {
+    margin-bottom: 2rem;
+}
+.mb-md {
+    margin-bottom: 3rem;
+}
+.mb-lg {
+    margin-bottom: 4rem;
+}
+.mb-xl {
+    margin-bottom: 8rem;
 }

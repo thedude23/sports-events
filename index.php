@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,21 +21,35 @@
     </header>
     <!-- .header -->
 
-    <div class="container mt-md">
-        <!-- main section -->
-        <main>
+    <!-- main section (events) -->
+    <main class="events">
+        <div class="container mt-md">
             <!-- heading-section -->
             <section class="heading">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="heading-1 text-center mt-lg">Calendar</h1>
+                <div class="row align-items-end">
+                    <div class="col-2">
+                        <a href="create.php" class="btn btn__submit">Add Event</a>
+                    </div>
+                    <div class="col-10">
+                        <h1 class="heading-1 text-center mt-lg">Sport Events Calendar</h1>
                     </div>
                 </div>
             </section>
             <!-- .heading-section -->
-
-            <!-- .events-section -->
+            
+            <!-- events section -->
             <section class="events mt-lg">
+                <?php
+                // Include config file
+                require_once "config.php";
+
+                // Attempt select query execution
+                $sql = "SELECT * FROM events";
+
+                if ($result = $pdo->query($sql)) {
+                    if ($result->rowCount() > 0) {
+                ?>
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -47,29 +62,46 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <?php
+                        while($row = $result->fetch()) {
+                    ?>
                         <tr>
-                            <td>1</td>
-                            <td>18.7.2019</td>
-                            <td>18:30</td>
-                            <td>Football</td>
-                            <td>Salzburg</td>
-                            <td>Sturm</td>
+                            <td><?php echo $row['id']?></td>
+                            <td><?php echo $row['date']?></td>
+                            <td><?php echo $row['time']?></td>
+                            <td><?php 
+                                if ($row['sport_id'] == 1) { 
+                                    echo 'Football'; 
+                                } else { 
+                                    echo "Hockey";
+                                } ?>
+                            </td>
+                            <td><?php echo $row['team_1']?></td>
+                            <td><?php echo $row['team_2']?></td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>23.10.2019</td>
-                            <td>09:45</td>
-                            <td>Hockey</td>
-                            <td>KAC</td>
-                            <td>Capitals</td>
                         </tr>
+                    <?php } ?>
                     </tbody>
                 </table>
+                <?php 
+                // Free result set
+                unset($result);
+                
+                    } else {
+                    echo "<p class='lead'><em>No records were found.</em></p>";
+                    }
+                } else {
+                    echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+                }
+
+                // Close connection
+                unset($pdo);
+                ?>
             </section>
             <!-- .events-section -->
-        </main>
-        <!-- .main-section -->
-    </div>
+        </div>
+    </main>
+    <!-- .main-section (events) -->
 
     <!-- footer -->
     <footer class="footer">

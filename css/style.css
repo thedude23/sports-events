@@ -37,6 +37,20 @@ body {
   font-size: 1.8rem;
 }
 
+/*** container ***/
+.container {
+  background-color: white;
+  border-radius: 2.5rem;
+  height: 75vh;
+  border-top: 4px dashed #ff5733;
+  border-bottom: 4px dashed #ff5733;
+  border-left: 4px solid #ff5733;
+  border-right: 4px solid #ff5733;
+  -webkit-box-shadow: 0 1rem 2rem 0.5rem rgba(255, 255, 255, 0.5);
+          box-shadow: 0 1rem 2rem 0.5rem rgba(255, 255, 255, 0.5);
+}
+
+/*** typography ***/
 .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
@@ -64,28 +78,39 @@ body {
   font-size: 1.9rem;
 }
 
+/*** buttons ***/
 .btn {
-  background-color: #ff5733;
-  color: #fff;
   border: none;
-  border-radius: 0;
+  border-radius: 2.5rem;
+  color: white;
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   font-size: 1.5rem;
-  padding: 1.8rem 3rem;
+  padding: 1rem 2rem;
   cursor: pointer;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
-.btn:hover {
+.btn__submit {
   background-color: #133c55;
+}
+
+.btn__cancel {
+  background-color: #ff5733;
+}
+
+.btn:hover {
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
+  color: white;
 }
 
 .text-center {
   text-align: center;
 }
 
+/*** margins ***/
 .mt-sm {
   margin-top: 2rem;
 }
@@ -102,22 +127,36 @@ body {
   margin-top: 8rem;
 }
 
-/*** container ***/
-.container {
-  background-color: white;
-  border-radius: 5rem;
-  height: 75vh;
-  border-top: 4px dashed #ff5733;
-  border-bottom: 4px dashed #ff5733;
-  border-left: 4px solid #ff5733;
-  border-right: 4px solid #ff5733;
-  -webkit-box-shadow: 0 1rem 2rem 0.5rem rgba(255, 255, 255, 0.5);
-          box-shadow: 0 1rem 2rem 0.5rem rgba(255, 255, 255, 0.5);
+.mb-sm {
+  margin-bottom: 2rem;
+}
+
+.mb-md {
+  margin-bottom: 3rem;
+}
+
+.mb-lg {
+  margin-bottom: 4rem;
+}
+
+.mb-xl {
+  margin-bottom: 8rem;
 }
 
 /*** table ***/
 .table {
   color: #133c55;
+}
+
+/*** create-update-form ***/
+.create-update-form label {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+}
+
+.create-update-form .help-block {
+  color: #ff5733;
+  font-size: 1.2rem;
 }
 
 .header__img img {
