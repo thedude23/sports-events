@@ -41,7 +41,7 @@ body {
 .container {
   background-color: white;
   border-radius: 2.5rem;
-  height: 75vh;
+  height: 80vh;
   border-top: 4px dashed #ff5733;
   border-bottom: 4px dashed #ff5733;
   border-left: 4px solid #ff5733;
@@ -79,12 +79,12 @@ body {
 }
 
 /*** buttons ***/
-.btn {
-  border: none;
+.btn, .btn:link, .btn:visited {
+  text-decoration: none;
+  border: 4px dashed white;
   border-radius: 2.5rem;
   color: white;
   font-family: "Josefin Sans", sans-serif;
-  text-transform: uppercase;
   font-size: 1.5rem;
   padding: 1rem 2rem;
   cursor: pointer;
@@ -92,18 +92,28 @@ body {
   transition: all .2s;
 }
 
+.btn:active, .btn:focus {
+  outline: none;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
 .btn__submit {
   background-color: #133c55;
+}
+
+.btn__submit:hover {
+  color: white;
+  background-color: #84bfe3;
 }
 
 .btn__cancel {
   background-color: #ff5733;
 }
 
-.btn:hover {
-  -webkit-filter: brightness(150%);
-          filter: brightness(150%);
+.btn__cancel:hover {
   color: white;
+  background-color: #661200;
 }
 
 .text-center {

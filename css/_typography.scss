@@ -33,35 +33,44 @@
 
 /*** buttons ***/
 .btn {
-    border: none;
-    border-radius: 2.5rem;
-    color: $color-white;
-    font-family: $font-secondary;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    transition: all .2s;
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        // border: none;
+        border: 4px dashed $color-white;
+        border-radius: 2.5rem;
+        color: $color-white;
+        font-family: $font-secondary;
+        // text-transform: uppercase;
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        transition: all .2s;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        transform: scale(1.02);
+    }
 
     &__submit {
         background-color: $color-primary;
+        
+        &:hover {
+            color: $color-white;
+            background-color: lighten($color-primary, 50%);
+        }
     }
 
     &__cancel {
         background-color: $color-secondary;
-    }
 
-    // &__edit {
-    //     background-color: $color-secondary;
-    // }
-
-    // &__update {
-    //     background-color: $color-secondary;
-    // }
-
-    &:hover {
-        filter: brightness(150%);
-        color: $color-white;
+        &:hover {
+            color: $color-white;
+            background-color: darken($color-secondary, 40%);
+        }
     }
 }
 

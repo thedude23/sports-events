@@ -72,9 +72,12 @@
                             <td><?php 
                                 if ($row['sport_id'] == 1) { 
                                     echo 'Football'; 
-                                } else { 
+                                } elseif ($row['sport_id'] == 2)  { 
                                     echo "Hockey";
-                                } ?>
+                                } else {
+                                    echo "";
+                                } 
+                                ?>
                             </td>
                             <td><?php echo $row['team_1']?></td>
                             <td><?php echo $row['team_2']?></td>
