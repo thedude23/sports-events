@@ -1,0 +1,16 @@
+/*** container ***/
+.container {
+    background-color: white;
+    border-radius: 5rem;
+    height: 75vh;
+    border-top: 4px dashed $color-secondary;
+    border-bottom: 4px dashed $color-secondary;
+    border-left: 4px solid $color-secondary;
+    border-right: 4px solid $color-secondary;
+    box-shadow: 0 1rem 2rem 0.5rem rgba(white, 0.5);
+}
+
+/*** table ***/
+.table {
+    color: $color-primary;
+}

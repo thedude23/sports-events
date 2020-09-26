@@ -1,0 +1,48 @@
+/*** colors ***/
+$color-primary: #133c55;
+$color-secondary: #ff5733;
+$color-black: black;
+$color-white: white;
+
+
+/*** fonts ***/
+$font-primary: 'Nunito', sans-serif;
+$font-secondary: 'Josefin Sans', sans-serif;
+
+
+/*** responsive breakpoints ***/
+$bp-xl: 1200px; // 1200 / 16 = 75em
+$bp-lg: 992px;
+$bp-m: 768px;
+$bp-sm: 576px;
+
+
+/*** basic ***/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 10px/16px(x100) = 62.5 => 1 rem = 10px */
+
+    @media screen and (max-width: $bp-xl) {
+        font-size: 50%; /* = 8px */
+    }
+}
+
+body {
+    font-family: $font-primary;
+    color: $color-primary;
+    font-weight: 300;
+    line-height: 1.6;
+    background-image: url('../img/bg-1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    font-size: 1.8rem;
+}

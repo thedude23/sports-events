@@ -1,0 +1,141 @@
+/*** colors ***/
+/*** fonts ***/
+/*** responsive breakpoints ***/
+/*** basic ***/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+  /* 10px/16px(x100) = 62.5 => 1 rem = 10px */
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 50%;
+    /* = 8px */
+  }
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: #133c55;
+  font-weight: 300;
+  line-height: 1.6;
+  background-image: url("../img/bg-1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  font-size: 1.8rem;
+}
+
+.heading-1, .heading-2, .heading-3, .heading-4 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+  color: #ff5733;
+}
+
+.heading-1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.heading-2 {
+  font-size: 4rem;
+  font-style: italic;
+  line-height: 1;
+}
+
+.heading-3 {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.heading-4 {
+  font-size: 1.9rem;
+}
+
+.btn {
+  background-color: #ff5733;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.btn:hover {
+  background-color: #133c55;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-sm {
+  margin-top: 2rem;
+}
+
+.mt-md {
+  margin-top: 3rem;
+}
+
+.mt-lg {
+  margin-top: 4rem;
+}
+
+.mt-xl {
+  margin-top: 8rem;
+}
+
+/*** container ***/
+.container {
+  background-color: white;
+  border-radius: 5rem;
+  height: 75vh;
+  border-top: 4px dashed #ff5733;
+  border-bottom: 4px dashed #ff5733;
+  border-left: 4px solid #ff5733;
+  border-right: 4px solid #ff5733;
+  -webkit-box-shadow: 0 1rem 2rem 0.5rem rgba(255, 255, 255, 0.5);
+          box-shadow: 0 1rem 2rem 0.5rem rgba(255, 255, 255, 0.5);
+}
+
+/*** table ***/
+.table {
+  color: #133c55;
+}
+
+.header__img img {
+  display: block;
+  width: 25rem;
+}
+
+.footer {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: white;
+}
+
+.footer__span {
+  color: #ff5733;
+}
+/*# sourceMappingURL=style.css.map */

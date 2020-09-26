@@ -1,0 +1,12 @@
+.footer {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: white;
+
+    &__span {
+        color: $color-secondary;
+    }
+}

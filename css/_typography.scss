@@ -1,0 +1,66 @@
+// TYPOGRAPHY
+%heading {
+    font-family: $font-secondary;
+    font-weight: 400;
+    color: $color-secondary;
+}
+
+.heading-1 {
+    @extend %heading;
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.heading-2 {
+    @extend %heading;
+    font-size: 4rem;
+    font-style: italic;
+    line-height: 1;
+}
+
+.heading-3 {
+    @extend %heading;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.heading-4 {
+    @extend %heading;
+    font-size: 1.9rem;
+}
+
+.btn {
+    background-color: $color-secondary;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding: 1.8rem 3rem;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        background-color: $color-primary;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+// MARGINS/SPACES
+.mt-sm {
+    margin-top: 2rem;
+}
+.mt-md {
+    margin-top: 3rem;
+}
+.mt-lg {
+    margin-top: 4rem;
+}
+.mt-xl {
+    margin-top: 8rem;
+}
