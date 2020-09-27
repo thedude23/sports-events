@@ -17,11 +17,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $date = $input_date;
     }
-    
+
     // Validate time
-    $input_time = trim($_POST["time"]);
+    $input_time= trim($_POST["time"]);
     if(empty($input_time)) {
-        $time_err = "Please enter a time.";     
+        $time_err = "Please enter a time.";
+    // } elseif(!filter_var($input_team_1, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
+    //     $team_1_err = "Please enter a valid team.";
     } else {
         $time = $input_time;
     }
@@ -42,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $team_1_err = "Please enter a team.";
     // } elseif(!filter_var($input_team_1, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
     //     $team_1_err = "Please enter a valid team.";
-    } else{
+    } else {
         $team_1 = $input_team_1;
     }
 
@@ -52,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $team_2_err = "Please enter a team.";
     // } elseif(!filter_var($input_team_2, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
     //     $team_2_err = "Please enter a valid team.";
-    } else{
+    } else {
         $team_2 = $input_team_2;
     }
 
@@ -96,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
  
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -105,6 +107,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- Custom CSS -->
@@ -133,8 +137,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             <span class="help-block"><?php echo $date_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($time_err)) ? 'has-error' : ''; ?>">
-                            <label>Time</label>
-                            <input type="time" name="time" class="form-control" value="<?php echo $time; ?>">
+                            <label>Time (eg. 16:30)</label>
+                            <input type="text" name="time" class="form-control" value="<?php echo $time; ?>"> <!--type="time"-->
                             <span class="help-block"><?php echo $time_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($sport_err)) ? 'has-error' : ''; ?>">
@@ -152,8 +156,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="text" name="team_2" class="form-control" value="<?php echo $team_2; ?>">
                             <span class="help-block"><?php echo $team_2_err;?></span>
                         </div>
-                        <input type="submit" class="btn btn__submit mt-sm" value="Submit">
-                        <a href="index.php" class="btn btn__cancel mt-sm">Cancel</a>
+                        <input type="submit" class="btn btn__submit" value="Submit">
+                        <a href="index.php" class="btn btn__cancel">Cancel</a>
                     </form>
                 </div>
             </div>

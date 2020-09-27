@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 26. sep 2020 ob 13.28
+-- Čas nastanka: 27. sep 2020 ob 16.52
 -- Različica strežnika: 10.4.10-MariaDB
 -- Različica PHP: 7.3.12
 
@@ -33,16 +33,17 @@ CREATE TABLE `events` (
   `sport_id` int(11) NOT NULL,
   `team_1` varchar(50) NOT NULL,
   `team_2` varchar(50) NOT NULL,
-  `date_time` datetime NOT NULL
+  `date` date NOT NULL,
+  `time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Odloži podatke za tabelo `events`
 --
 
-INSERT INTO `events` (`id`, `sport_id`, `team_1`, `team_2`, `date_time`) VALUES
-(1, 1, 'Salzburg', 'Sturm', '2019-07-18 18:30:00'),
-(2, 2, 'KAC', 'Capitals', '2019-10-23 18:45:00');
+INSERT INTO `events` (`id`, `sport_id`, `team_1`, `team_2`, `date`, `time`) VALUES
+(1, 1, 'Salzburg', 'Sturm', '2019-07-18', '18:30:00'),
+(2, 2, 'KAC', 'Capitals', '2019-10-23', '09:45:00');
 
 -- --------------------------------------------------------
 
@@ -88,7 +89,7 @@ ALTER TABLE `sports`
 -- AUTO_INCREMENT tabele `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT tabele `sports`

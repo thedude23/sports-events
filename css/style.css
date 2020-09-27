@@ -34,7 +34,14 @@ body {
   background-size: cover;
   background-position: center;
   height: 100%;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  body {
+    font-size: 1.4rem;
+  }
 }
 
 /*** container ***/
@@ -61,6 +68,18 @@ body {
   font-size: 4.5rem;
   font-weight: 700;
   line-height: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .heading-1 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .heading-1 {
+    font-size: 2rem;
+  }
 }
 
 .heading-2 {
@@ -90,6 +109,13 @@ body {
   cursor: pointer;
   -webkit-transition: all .2s;
   transition: all .2s;
+}
+
+@media screen and (max-width: 576px) {
+  .btn, .btn:link, .btn:visited {
+    padding: 0.25rem 0.5rem;
+    border: 2px dashed white;
+  }
 }
 
 .btn:active, .btn:focus {
@@ -153,9 +179,19 @@ body {
   margin-bottom: 8rem;
 }
 
+.mt-sm-minus {
+  margin-top: 0px;
+}
+
 /*** table ***/
 .table {
   color: #133c55;
+}
+
+@media screen and (max-width: 576px) {
+  .table {
+    font-size: 1.5rem;
+  }
 }
 
 /*** create-update-form ***/
@@ -180,11 +216,17 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: white;
 }
 
 .footer__span {
   color: #ff5733;
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    font-size: 1rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

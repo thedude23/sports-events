@@ -10,6 +10,14 @@
     font-size: 4.5rem;
     font-weight: 700;
     line-height: 1;
+
+    @media screen and (max-width: $bp-m) {
+        font-size: 3rem;
+    }
+
+    @media screen and (max-width: $bp-sm) {
+        font-size: 2rem;
+    }
 }
 
 .heading-2 {
@@ -30,6 +38,9 @@
     font-size: 1.9rem;
 }
 
+// p {
+//     font-size: 1.6rem;
+// }
 
 /*** buttons ***/
 .btn {
@@ -47,6 +58,11 @@
         padding: 1rem 2rem;
         cursor: pointer;
         transition: all .2s;
+
+        @media screen and (max-width: $bp-sm) {
+            padding: 0.25rem 0.5rem;
+            border: 2px dashed $color-white;
+        }
     }
 
     &:active,
@@ -105,4 +121,8 @@
 }
 .mb-xl {
     margin-bottom: 8rem;
+}
+
+.mt-sm-minus {
+    margin-top: 0px;
 }

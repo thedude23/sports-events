@@ -3,10 +3,14 @@
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: white;
 
     &__span {
         color: $color-secondary;
+    }
+
+    @media screen and (max-width: $bp-sm) {
+        font-size: 1rem;
     }
 }

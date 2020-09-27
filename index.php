@@ -7,6 +7,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- Custom CSS -->
@@ -27,11 +29,11 @@
             <!-- heading-section -->
             <section class="heading">
                 <div class="row align-items-end">
-                    <div class="col-2">
+                    <div class="col-4">
                         <a href="create.php" class="btn btn__submit">Add Event</a>
                     </div>
-                    <div class="col-10">
-                        <h1 class="heading-1 text-center mt-lg">Sport Events Calendar</h1>
+                    <div class="col-8">
+                        <h1 class="heading-1 mt-lg">Sport Events Calendar</h1>
                     </div>
                 </div>
             </section>
@@ -39,67 +41,79 @@
             
             <!-- events section -->
             <section class="events mt-lg">
-                <?php
-                // Include config file
-                require_once "config.php";
+                <div class="row">
+                    <div class="col-12">
+                        <?php
+                        // Include config file
+                        require_once "config.php";
 
-                // Attempt select query execution
-                $sql = "SELECT * FROM events";
+                        // Attempt select query execution
+                        $sql = "SELECT * FROM events";
 
-                if ($result = $pdo->query($sql)) {
-                    if ($result->rowCount() > 0) {
-                ?>
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Time</th>
-                            <th scope="col">Sport</th>
-                            <th scope="col">Team 1</th>
-                            <th scope="col">Team 2</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                        while($row = $result->fetch()) {
-                    ?>
-                        <tr>
-                            <td><?php echo $row['id']?></td>
-                            <td><?php echo $row['date']?></td>
-                            <td><?php echo $row['time']?></td>
-                            <td><?php 
-                                if ($row['sport_id'] == 1) { 
-                                    echo 'Football'; 
-                                } elseif ($row['sport_id'] == 2)  { 
-                                    echo "Hockey";
-                                } else {
-                                    echo "";
-                                } 
+                        if ($result = $pdo->query($sql)) {
+                            if ($result->rowCount() > 0) {
+                        ?>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm xtable-bordered">
+                                <thead>
+                                    <tr>
+                                        <!-- <th scope="col">#</th> -->
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Time</th>
+                                        <th scope="col">Sport</th>
+                                        <th scope="col">Team 1</th>
+                                        <th scope="col">Team 2</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                    while($row = $result->fetch()) {
                                 ?>
-                            </td>
-                            <td><?php echo $row['team_1']?></td>
-                            <td><?php echo $row['team_2']?></td>
-                        </tr>
-                        </tr>
-                    <?php } ?>
-                    </tbody>
-                </table>
-                <?php 
-                // Free result set
-                unset($result);
-                
-                    } else {
-                    echo "<p class='lead'><em>No records were found.</em></p>";
-                    }
-                } else {
-                    echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
-                }
+                                    <tr>
+                                        <!-- <td><?php //echo $row['id']?></td> -->
+                                        <td><?php echo $row['date']?></td>
+                                        <td><?php echo $row['time']?></td>
+                                        <td><?php 
+                                            if ($row['sport_id'] == 1) { 
+                                                echo 'Football'; 
+                                            } elseif ($row['sport_id'] == 2)  { 
+                                                echo "Hockey";
+                                            } else {
+                                                echo "";
+                                            } 
+                                            ?>
+                                        </td>
+                                        <td><?php echo $row['team_1']?></td>
+                                        <td><?php echo $row['team_2']?></td>
+                                        <td>
+                                            <?php echo "<a href='update.php?id=". $row['id'] ."' title='Update Record'><ion-icon name='create-outline'></ion-icon></a>";
+                                                echo "<a href='delete.php?id=". $row['id'] ."' title='Delete Record'><ion-icon name='trash-outline'></ion-icon></a>";
+                                            ?>
+                                        </td>
+                                    </tr>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <?php 
+                        // Free result set
+                        unset($result);
+                        
+                            } else {
+                            echo "<p class='lead'><em>No records were found.</em></p>";
+                            }
+                        } else {
+                            echo "ERROR: Could not able to execute $sql. " . $mysqli->error;
+                        }
 
-                // Close connection
-                unset($pdo);
-                ?>
+                        
+                        // Close connection
+                        unset($pdo);
+                        ?>
+                    </div>
+                </div>
             </section>
             <!-- .events-section -->
         </div>

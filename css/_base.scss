@@ -44,7 +44,12 @@ body {
     background-size: cover;
     background-position: center;
     height: 100%;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    width: 100%;
+
+    @media screen and (max-width: $bp-sm) {
+        font-size: 1.4rem;
+    }
 }
 
 /*** container ***/

@@ -1,6 +1,10 @@
 /*** table ***/
 .table {
     color: $color-primary;
+
+    @media screen and (max-width: $bp-sm) {
+        font-size: 1.5rem;
+    }
 }
 
 /*** create-update-form ***/
