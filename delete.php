@@ -65,6 +65,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     </header>
     <!-- .header -->
 
+    <!-- delete-form -->
     <main class="delete-form">
         <div class="container">
             <div class="row">
@@ -82,6 +83,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             </div>        
         </div>
     </main>
+    <!-- .delete-form -->
 
     <!-- footer -->
     <footer class="footer">
