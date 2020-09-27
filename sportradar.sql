@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2020 at 05:02 PM
+-- Generation Time: Sep 27, 2020 at 05:45 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -64,6 +64,28 @@ INSERT INTO `sports` (`id`, `name`) VALUES
 (1, 'football'),
 (2, 'ice hockey');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teams`
+--
+
+CREATE TABLE `teams` (
+  `id` int(11) NOT NULL,
+  `sport_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `teams`
+--
+
+INSERT INTO `teams` (`id`, `sport_id`, `name`) VALUES
+(1, 1, 'Salzburg'),
+(2, 1, 'Sturm'),
+(3, 2, 'KAC'),
+(4, 2, 'Capitals');
+
 --
 -- Indexes for dumped tables
 --
@@ -82,6 +104,14 @@ ALTER TABLE `sports`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `teams`
+--
+ALTER TABLE `teams`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `sport_id` (`sport_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -98,6 +128,12 @@ ALTER TABLE `sports`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `teams`
+--
+ALTER TABLE `teams`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -106,6 +142,12 @@ ALTER TABLE `sports`
 --
 ALTER TABLE `events`
   ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`sport_id`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `teams`
+--
+ALTER TABLE `teams`
+  ADD CONSTRAINT `teams_ibfk_1` FOREIGN KEY (`sport_id`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
