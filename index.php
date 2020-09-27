@@ -78,7 +78,7 @@
                                             if ($row['sport_id'] == 1) { 
                                                 echo 'Football'; 
                                             } elseif ($row['sport_id'] == 2)  { 
-                                                echo "Hockey";
+                                                echo "Ice Hockey";
                                             } else {
                                                 echo "";
                                             } 

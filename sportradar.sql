@@ -2,10 +2,10 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Gostitelj: 127.0.0.1
--- Čas nastanka: 27. sep 2020 ob 16.52
--- Različica strežnika: 10.4.10-MariaDB
--- Različica PHP: 7.3.12
+-- Host: 127.0.0.1
+-- Generation Time: Sep 27, 2020 at 05:02 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Zbirka podatkov: `sportradar`
+-- Database: `sportradar`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `events`
+-- Table structure for table `events`
 --
 
 CREATE TABLE `events` (
@@ -38,7 +38,7 @@ CREATE TABLE `events` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Odloži podatke za tabelo `events`
+-- Dumping data for table `events`
 --
 
 INSERT INTO `events` (`id`, `sport_id`, `team_1`, `team_2`, `date`, `time`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `events` (`id`, `sport_id`, `team_1`, `team_2`, `date`, `time`) VALU
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `sports`
+-- Table structure for table `sports`
 --
 
 CREATE TABLE `sports` (
@@ -57,52 +57,52 @@ CREATE TABLE `sports` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Odloži podatke za tabelo `sports`
+-- Dumping data for table `sports`
 --
 
 INSERT INTO `sports` (`id`, `name`) VALUES
 (1, 'football'),
-(2, 'hockey');
+(2, 'ice hockey');
 
 --
--- Indeksi zavrženih tabel
+-- Indexes for dumped tables
 --
 
 --
--- Indeksi tabele `events`
+-- Indexes for table `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`),
   ADD KEY `sport_id` (`sport_id`);
 
 --
--- Indeksi tabele `sports`
+-- Indexes for table `sports`
 --
 ALTER TABLE `sports`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT zavrženih tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT tabele `events`
+-- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT tabele `sports`
+-- AUTO_INCREMENT for table `sports`
 --
 ALTER TABLE `sports`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Omejitve tabel za povzetek stanja
+-- Constraints for dumped tables
 --
 
 --
--- Omejitve za tabelo `events`
+-- Constraints for table `events`
 --
 ALTER TABLE `events`
   ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`sport_id`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
