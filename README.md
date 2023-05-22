@@ -1,3 +1,3 @@
 # sports-events
 
-Sport Events Calendar in PHP.
+Sport Events Calendar app in PHP.
