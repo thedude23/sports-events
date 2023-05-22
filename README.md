@@ -1,2 +1,3 @@
 # sports-events
-Sport Events Calendar app, made in PHP
+
+Sport Events Calendar in PHP.
